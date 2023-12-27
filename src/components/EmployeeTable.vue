@@ -21,10 +21,10 @@
                     <td v-else>{{ employee.email }}</td>
                     <td v-if="editing === employee.id">
                         <button @click="editEmployee(employee)">Save</button>
-                        <button class="muted-button" @click="editing = null">Cancel</button>
+                        <button class="muted-button" @click="cancelEdit(employee)">Cancel</button>
                     </td>
                     <td v-else>
-                        <button @click="(employee.id)">Edit</button>
+                        <button @click="editMode(employee)">Edit</button>
                         <button @click="$emit('delete:employee', employee.id)">Delete</button>
                     </td>
                 </tr>
